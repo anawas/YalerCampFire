@@ -38,8 +38,9 @@ void setup() {
   Serial.println(htmlLength);
 
   // taken from yaler sample code
-  ledUriOffset = sizeof("PUT /") + sizeof(yalerId) + sizeof("/led/") - 3 * 1;
-  // for debugging: Serial.print("ledURIOffset = "); Serial.println(ledUriOffset);
+  //ledUriOffset = sizeof("PUT /") + sizeof(yalerId) + sizeof("/led/") - 3 * 1;
+  ledUriOffset = sizeof("PUT /./");
+  Serial.print("ledURIOffset = "); Serial.println(ledUriOffset);
 
   // now initalising the camp fire...
   randomSeed (analogRead (0));    // randomize

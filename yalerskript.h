@@ -21,7 +21,7 @@ const char html[] =
       "} catch (e) {}"
     "}"
     "function set (c) {"
-      "r.open('PUT', './led/' + c, false);"
+      "r.open('PUT', './' + c, false);"
       "r.send(null);"
     "}"
     "</script>"
