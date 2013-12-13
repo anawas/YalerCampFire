@@ -19,7 +19,7 @@ ISR(TIMER1_COMPA_vect)
       ledState = FIRE_ON;
     }
     else {
-      digitalWrite(randomLED, HIGH);
+      analogWrite(randomLED, HIGH);
       ledState = FIRE_OFF;
     } 
     //digitalWrite(randomLED, !digitalRead(randomLED));

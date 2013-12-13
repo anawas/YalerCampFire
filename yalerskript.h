@@ -21,7 +21,7 @@ const char html[] =
       "} catch (e) {}"
     "}"
     "function set (c) {"
-      "r.open('PUT', './' + c, false);"
+      "r.open('PUT', './led/' + c, false);"
       "r.send(null);"
     "}"
     "</script>"
@@ -30,6 +30,7 @@ const char html[] =
       ".g {color:lightgrey}"
     "</style>"
   "</head>"
+  "<p>Klicken auf die Bilder &auml;ndert die Helligkeit des Feuers</p>"
   "<body><table border=\"3px\">"
     "<tr>"
       "<td align=\"center\" valign=\"middle\" width=\"250px\">"
@@ -42,6 +43,6 @@ const char html[] =
       "</td>"
     "</tr>"
     "</table>"
-      "<p>HTML served from <a href=\"\">this</a> Arduino, made accessible by <a href=\"http://www.yaler.org/\">Yaler</a>.</p>"
+      "<p>HTML served from an Arduino, made accessible by <a href=\"http://www.yaler.org/\">Yaler</a>.</p>"
   "</body></html>";
 

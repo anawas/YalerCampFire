@@ -29,16 +29,17 @@ void parseRequestChar (char ch) {
 
   // the following lines contain code that was not in the example release
   // originally by yaler.
+  //Serial.print("count: "); Serial.print(count); Serial.print(" ch = "); Serial.println(ch);
   if (count == 0) {
     isPut = ch == 'P';
   } else if ((count >= ledUriOffset) && (count < ledUriOffset + 1)) {
-    if (ch == '0') {
-      fireIntensity = fireIntensity - 50;
+    if (ch == '1') {
+      fireIntensity = fireIntensity - 25;
       if (fireIntensity <= 0) {
         fireIntensity = 0;
       }
-    } else if (ch == '1') {
-      fireIntensity = fireIntensity + 50;
+    } else if (ch == '0') {
+      fireIntensity = fireIntensity + 25;
       if (fireIntensity >= 250) {
         fireIntensity = 250;
       }
@@ -105,6 +106,7 @@ void receiveYalerResponse (EthernetClient c) {
   yalerCount = 0;
   yalerState = YALER_RECEIVING;
   while (c.connected() && (c.available() <= 0)) {} // Yaler sends 101 or 204 in < 30s
+  Serial.print("**** Yaler response:");
   while (c.connected() && (c.available() > 0) &&
     (yalerState != YALER_UPGRADED) &&
     (yalerState != YALER_TIMEOUT)) 
