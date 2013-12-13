@@ -43,7 +43,7 @@ void parseRequestChar (char ch) {
         fireIntensity = 250;
       }
     }
-    // for debugging: Serial.print("fire intensity = "); Serial.println(fireIntensity);
+    Serial.print("fire intensity = "); Serial.println(fireIntensity);
   }
 
   if (state == RECEIVING) {
