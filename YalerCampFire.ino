@@ -35,7 +35,7 @@ void setup() {
   Serial.println("setup");
   Ethernet.begin(mac);
   htmlLength = sizeof(html) - 1;
-  Serial.println(htmlLength);
+  Serial.print("Length of html script: "); Serial.println(htmlLength);
 
   // taken from yaler sample code
   ledUriOffset = 9;//sizeof("PUT /") + sizeof(yalerId) + sizeof("/led/") - 3 * 1;

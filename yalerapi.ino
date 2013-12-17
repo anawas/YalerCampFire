@@ -8,7 +8,7 @@
  ** to set the LED intensity.
  ********************************************/
 
-const int dIntensity = 30;
+const int dIntensity = 150;
 
 byte byteFromHexChar (char ch) {
   byte result;
