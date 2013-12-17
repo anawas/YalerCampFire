@@ -3,7 +3,7 @@
  **
  ** This script gets uploaded to the yaler service. It is
  ** based the one in the yaler example.
- ** The length is limited by the Arduino RAM. This size of
+ ** The length is limited by the Arduino RAM. The size of
  ** this script is close to that limit.
  **
  ** It reads two images from my own website andreas-wassmer.ch
@@ -11,6 +11,9 @@
  
 const char html[] =
   "<html><head>"
+	"<meta charset=\"utf-8\">"
+	"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">"
+
     "<script type=\"text/javascript\">"
     "var r;"
     "try {"
@@ -33,16 +36,18 @@ const char html[] =
   "<p>Klicken auf die Bilder &auml;ndert die Helligkeit des Feuers</p>"
   "<body><table border=\"3px\">"
     "<tr>"
-      "<td align=\"center\" valign=\"middle\" width=\"250px\">"
-        "<input type=\"image\" src=\"http://andreas-wassmer.ch/campfire_on.jpg\" style=\"width:200px;\" onclick=\"set('0')\" value=\"Feuer anz&uuml;nden\"/>"
+      "<td align=\"center\" valign=\"middle\" width=\"200px\">"
+        "<input type=\"image\" src=\"http://andreas-wassmer.ch/campfire_big.jpg\" style=\"width:150px;\" onclick=\"set('0')\" value=\"Feuer anz&uuml;nden\"/>"
         "<p>Feuer st&auml;rker</p>"
       "</td>"
-      "<td align=\"center\" valign=\"middle\" width=\"250px\">"
-        "<input type=\"image\" src=\"http://andreas-wassmer.ch/campfire_on.jpg\" style=\"width:100px;\" onclick=\"set('1')\" value=\"Feuer dimmen\"/>"
+	  "</tr>"
+	  "<tr>"
+      "<td align=\"center\" valign=\"middle\" width=\"200px\">"
+        "<input type=\"image\" src=\"http://andreas-wassmer.ch/campfire_small.jpg\" style=\"width:150px;\" onclick=\"set('1')\" value=\"Feuer dimmen\"/>"
         "<p>Feuer schw&auml;cher</p>"
       "</td>"
     "</tr>"
     "</table>"
-      "<p>HTML served from an Arduino, made accessible by <a href=\"http://www.yaler.org/\">Yaler</a>.</p>"
+      "<p>HTML geliefert von einem Arduino-Board, Zugriff &uuml;ber <a href=\"http://www.yaler.org/\">Yaler</a>.</p>"
   "</body></html>";
 
