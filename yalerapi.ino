@@ -41,12 +41,12 @@ void parseRequestChar (char ch) {
       fireIntensity = 0;
     } else if (ch == '2') {
       fireIntensity = fireIntensity + dIntensity;
-      if (fireIntnesity >= 250) {
+      if (fireIntensity >= 250) {
         fireIntensity = 250;
       }
     } else if (ch == '3') {
       fireIntensity = fireIntensity - dIntensity;
-      if (fireIntnesity < 0) {
+      if (fireIntensity < 0) {
         fireIntensity = 0;
       }
 
