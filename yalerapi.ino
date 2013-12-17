@@ -7,7 +7,9 @@
  ** I changed some lines in function parseRequestChar() in order
  ** to set the LED intensity.
  ********************************************/
- 
+
+const int dIntensity = 30;
+
 byte byteFromHexChar (char ch) {
   byte result;
   if ((ch >= '0') && (ch <= '9')) {
@@ -33,16 +35,21 @@ void parseRequestChar (char ch) {
   if (count == 0) {
     isPut = ch == 'P';
   } else if ((count >= ledUriOffset) && (count < ledUriOffset + 1)) {
-    if (ch == '1') {
-      fireIntensity = fireIntensity - 25;
-      if (fireIntensity <= 0) {
-        fireIntensity = 0;
-      }
-    } else if (ch == '0') {
-      fireIntensity = fireIntensity + 25;
-      if (fireIntensity >= 250) {
+    if (ch == '0') {
+      fireIntensity = dIntensity;
+    } else if (ch == '1') {
+      fireIntensity = 0;
+    } else if (ch == '2') {
+      fireIntensity = fireIntensity + dIntensity;
+      if (fireIntnesity >= 250) {
         fireIntensity = 250;
       }
+    } else if (ch == '3') {
+      fireIntensity = fireIntensity - dIntensity;
+      if (fireIntnesity < 0) {
+        fireIntensity = 0;
+      }
+
     }
     Serial.print("fire intensity = "); Serial.println(fireIntensity);
   }

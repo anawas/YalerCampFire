@@ -15,11 +15,15 @@ ISR(TIMER1_COMPA_vect)
   --randOn;
   if (randOn == 0) {
     if (ledState == FIRE_OFF) {
-      analogWrite(randomLED, fireIntensity);
+      if (fireIntensity == 0) {
+        analogWrite(randomLED, LOW);
+      } else {
+        analogWrite(randomLED, fireIntensity);
+      }
       ledState = FIRE_ON;
     }
     else {
-      analogWrite(randomLED, HIGH);
+      analogWrite(randomLED, LOW);
       ledState = FIRE_OFF;
     } 
     //digitalWrite(randomLED, !digitalRead(randomLED));
